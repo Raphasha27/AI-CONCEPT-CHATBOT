@@ -13,8 +13,6 @@ import {
   ChevronDown,
   Compass,
   Store,
-  Compass,
-  Store,
   Clock,
   ShieldAlert,
   Activity
