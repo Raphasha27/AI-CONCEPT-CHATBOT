@@ -44,7 +44,7 @@ Professional accounting and growth intelligence for the Ekurhuleni and Tshwane t
 ---
 
 ## 🚁 Live Demo & Preview
-Explore the national cockpit today: [QueueLess App](https://web-chi-pink-75.vercel.app)
+Explore the national cockpit today: [https://web-chi-pink-75.vercel.app](https://web-chi-pink-75.vercel.app)
 
 ## 🏗️ Technical Stack
 QueueLess AI is built as a highly scalable monorepo ensuring professional-grade security and institutional performance.
