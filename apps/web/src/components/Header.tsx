@@ -13,7 +13,11 @@ import {
   ChevronDown,
   Compass,
   Store,
-  Clock
+  Compass,
+  Store,
+  Clock,
+  ShieldAlert,
+  Activity
 } from "lucide-react";
 import { useState } from "react";
 
@@ -24,10 +28,10 @@ export default function Header() {
 
   const navItems = [
     { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+    { label: "SizweOS Cockpit", href: "/civicos", icon: Activity },
     { label: "QueueLess AI", href: "/queueless", icon: Clock },
     { label: "Civic Navigator", href: "/navigator", icon: Compass },
     { label: "SpazaAI", href: "/spaza", icon: Store },
-    { label: "Chat & Verify", href: "/chat", icon: MessageSquare },
     { label: "Report Generator", href: "/report", icon: ShieldCheck },
   ];
 
@@ -36,14 +40,14 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-[#07090e]/80 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <div className="flex items-center gap-8">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500 shadow-lg shadow-indigo-500/20 transition-transform group-hover:scale-105">
+          <Link href="/navigator" className="flex items-center gap-3 group">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 shadow-lg shadow-blue-500/20 transition-transform group-hover:scale-105">
               <ShieldAlert className="text-white" size={24} />
             </div>
-            <span className="text-xl font-black tracking-tight text-white uppercase">Civic<span className="text-indigo-500">OS</span></span>
+            <span className="text-xl font-black tracking-tight text-white uppercase">Sizwe<span className="text-blue-500">OS</span></span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">

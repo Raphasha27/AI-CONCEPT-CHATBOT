@@ -7,12 +7,12 @@ import Providers from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: {
-    default: "VerifyZA — South Africa AI Compliance Platform",
-    template: "%s | VerifyZA",
+    default: "SizweOS — National Infrastructure Intelligence Platform",
+    template: "%s | SizweOS",
   },
   description:
-    "AI-powered compliance and accreditation verification for South Africa. Verify doctors, businesses, schools, and contractors instantly.",
-  keywords: ["South Africa", "HPCSA", "SAQA", "CIPC", "compliance", "verification", "AI"],
+    "The sovereign national OS for South Africa. AI-driven infrastructure monitoring, multi-agency coordination, and civic intelligence.",
+  keywords: ["South Africa", "CivicOS", "SizweOS", "infrastructure", "municipal", "AI", "governance"],
   robots: "index, follow",
 };
 
