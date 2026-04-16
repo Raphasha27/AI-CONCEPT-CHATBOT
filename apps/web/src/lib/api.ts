@@ -68,10 +68,51 @@ export const chatAPI = {
 
 // ── Reports ───────────────────────────────────────────────
 export const reportsAPI = {
-  generate: (data: { description: string; location?: string; municipality?: string }) =>
-    api.post("/reports/generate", data),
+  generate: (data: {
+    description: string;
+    location?: string;
+    latitude?: number;
+    longitude?: number;
+    municipality?: string;
+    ward?: string;
+    households_affected?: number;
+    evidence_urls?: string[];
+    is_anonymous?: boolean;
+  }) => api.post("/reports/generate", data),
   list: () => api.get("/reports/"),
   get: (id: number) => api.get(`/reports/${id}`),
+  feed: () => api.get("/reports/feed"),
+  track: (trackingId: string) => api.get(`/reports/track/${trackingId}`),
+  upvote: (id: number) => api.post(`/reports/${id}/upvote`),
+};
+
+// ── Command Center ──────────────────────────────────────────
+export const commandCenterAPI = {
+  metrics: () => api.get("/command-center/metrics"),
+  liveCases: (limit: number = 50) => api.get(`/command-center/live-cases?limit=${limit}`),
+  crisisPredict: (wardId: string) => api.get(`/command-center/crisis/predict/${wardId}`),
+};
+
+// ── National Control Tower ──────────────────────────────────
+export const nationalAPI = {
+  status: () => api.get("/national/status"),
+};
+
+// ── SaaS Billing ────────────────────────────────────────────
+export const billingAPI = {
+  mySubscription: () => api.get("/billing/subscription"),
+  usage: () => api.get("/billing/usage"),
+};
+
+// ── Hybrid Intelligence ─────────────────────────────────────
+export const hybridAPI = {
+  run: (payload: { real: any[], simulated: any[] }) => api.post("/hybrid/run", payload),
+};
+
+// ── CivicOS Incidents ───────────────────────────────────────
+export const incidentsAPI = {
+  list: () => api.get("/incidents"),
+  analyze: (text: string) => api.post("/incidents/analyze", { text }),
 };
 
 // ── Users ─────────────────────────────────────────────────
@@ -95,4 +136,26 @@ export const datasetsAPI = {
       headers: { "Content-Type": "multipart/form-data" },
     }),
   delete: (id: number) => api.delete(`/datasets/${id}`),
+};
+
+// ── TaxMate (SpazaAI) ─────────────────────────────────────
+export const taxMateAPI = {
+  summary: (year: number = 2025) => api.get(`/tax/summary?year=${year}`),
+  history: (limit: number = 50) => api.get(`/tax/history?limit=${limit}`),
+  addEntry: (data: { 
+    shop_id: string; 
+    amount: number; 
+    category?: string; 
+    entry_date?: string; 
+    notes?: string 
+  }) => api.post("/tax/income-entry", data),
+  brackets: (year: number = 2025) => api.get(`/tax/brackets?year=${year}`),
+};
+// ── QueueLess AI (Gov Concierge) ──────────────────────────
+export const queuelessAPI = {
+  offices: (type?: string) => api.get(`/queueless/offices${type ? `?office_type=${type}` : ""}`),
+  slots: (officeId: number) => api.get(`/queueless/offices/${officeId}/slots`),
+  book: (data: { office_id: number; slot_id: number; service_type: string; notes?: string }) =>
+    api.post("/queueless/book", data),
+  myBookings: () => api.get("/queueless/my-bookings"),
 };

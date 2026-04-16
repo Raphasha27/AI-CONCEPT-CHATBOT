@@ -53,14 +53,15 @@ export default function LandingPage() {
       <nav className="flex items-center justify-between px-6 py-6 border-b border-surface-border max-w-7xl mx-auto w-full">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-gradient-za flex items-center justify-center text-white font-black text-xs shadow-lg shadow-za-green/10">
-            VZ
+            QL
           </div>
           <div className="flex flex-col">
-            <span className="font-black text-xl tracking-tight leading-none uppercase">VerifyZA</span>
-            <span className="text-[10px] text-za-green font-bold uppercase tracking-widest mt-0.5">National Civic Hub</span>
+            <span className="font-black text-xl tracking-tight leading-none uppercase">QueueLess AI™</span>
+            <span className="text-[10px] text-za-green font-bold uppercase tracking-widest mt-0.5">National Civic Concierge</span>
           </div>
         </div>
         <div className="flex items-center gap-4">
+          <Link href="/queueless" className="hidden lg:block text-sm font-bold text-white transition-colors border-b-2 border-za-green pb-1">QueueLess AI</Link>
           <Link href="/navigator" className="hidden md:block text-sm font-bold text-[var(--color-muted)] hover:text-white transition-colors">Navigator</Link>
           <Link href="/spaza" className="hidden md:block text-sm font-bold text-[var(--color-muted)] hover:text-white transition-colors">SpazaAI</Link>
           <div className="w-px h-4 bg-surface-border hidden md:block" />
@@ -73,7 +74,7 @@ export default function LandingPage() {
           ) : (
             <>
               <Link href="/auth" className="text-sm font-bold hover:text-za-green transition-colors">Login</Link>
-              <Link href="/auth?mode=register" className="btn-primary text-sm px-6 py-2.5">
+              <Link href="/auth?mode=register" className="btn-primary text-sm px-6 py-2.5 shadow-xl shadow-za-green/20">
                 Join Community
               </Link>
             </>
@@ -86,20 +87,20 @@ export default function LandingPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-za-green/5 rounded-full blur-[120px] -z-10" />
         
         <div className="inline-flex items-center gap-2 bg-za-green/10 border border-za-green/20 text-za-green text-[11px] font-black px-4 py-2 rounded-full mb-8 uppercase tracking-[0.1em]">
-          🇿🇦 Official South African Civic Tool
+          🇿🇦 Your 24/7 Government Process Assistant
         </div>
 
-        <h1 className="text-5xl sm:text-7xl font-black tracking-tight leading-[1.05] mb-8">
-          The National Hub for <br />
-          <span className="bg-gradient-to-r from-za-green via-za-gold to-za-red bg-clip-text text-transparent italic">
-            Civic Reliability.
+        <h1 className="text-5xl sm:text-7xl font-black tracking-tighter leading-[0.95] mb-8">
+          Skip the Stress, <br />
+          <span className="bg-gradient-to-r from-za-green via-za-gold to-white bg-clip-text text-transparent italic">
+            Not the Process.
           </span>
         </h1>
 
-        <p className="text-[var(--color-muted)] text-xl max-w-3xl mx-auto mb-12 leading-relaxed">
-          The all-in-one platform for South African citizens and small businesses. 
-          Verify professional credentials, report service delivery issues, 
-          and scale your local business with professional intelligence.
+        <p className="text-[var(--color-muted)] text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+          QueueLess AI helps you prepare documents, book appointments, and 
+          <span className="text-white font-bold ml-1">avoid the long queues</span> at Home Affairs and the Traffic Dept. 
+          Verify credentials, report service delivery issues, and scale your local business.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">

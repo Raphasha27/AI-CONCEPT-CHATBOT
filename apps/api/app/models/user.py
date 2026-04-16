@@ -4,7 +4,7 @@ User model — accounts + roles.
 import enum
 from datetime import datetime, timezone
 
-from sqlalchemy import Boolean, DateTime, Enum, Integer, String
+from sqlalchemy import Boolean, DateTime, Enum, Integer, String, Column, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.database import Base
@@ -37,9 +37,14 @@ class User(Base):
         onupdate=lambda: datetime.now(timezone.utc),
         nullable=False,
     )
-
-    # Relationships
-    chat_sessions = relationship("ChatSession", back_populates="user", cascade="all, delete-orphan")
-    verification_records = relationship("VerificationRecord", back_populates="user", cascade="all, delete-orphan")
+    role = Column(String(50), default="citizen") # citizen, gov_agent, spaza_owner, admin
+    tenant_id = Column(String(36), ForeignKey("tenants.id"), nullable=True)
+    is_active = Column(Boolean, default=True)
+    
+    # New relationships
+    tenant = relationship("Tenant", back_populates="users")
+    chat_sessions = relationship("ChatSession", back_populates="user")
+    verifications = relationship("VerificationRecord", back_populates="user")
+    municipal_reports = relationship("MunicipalReport", back_populates="user")
     audit_logs = relationship("AuditLog", back_populates="user", cascade="all, delete-orphan")
     shops = relationship("SpazaShop", back_populates="owner", cascade="all, delete-orphan")

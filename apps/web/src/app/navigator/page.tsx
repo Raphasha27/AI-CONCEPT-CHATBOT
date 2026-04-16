@@ -12,11 +12,91 @@ import {
   FileCheck,
   Zap,
   ChevronRight,
-  Info
+  Info,
+  AlertTriangle,
+  Calculator,
+  Clock,
+  ShieldAlert,
+  Globe,
+  CreditCard,
+  Sparkles
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_TOOLS = [
+  {
+    id: "civicos-dash",
+    title: "City Analytics Dashboard",
+    desc: "Executive command cockpit for municipal metrics, service delivery tracking, and incident management.",
+    icon: Activity,
+    color: "bg-blue-600",
+    badge: "Core",
+    link: "/civicos"
+  },
+  {
+    id: "hybrid-intel",
+    title: "National Fusion Layer",
+    desc: "A Common Operating Picture merging real-world streams with predictive intelligence modeling.",
+    icon: Sparkles,
+    color: "bg-purple-600",
+    badge: "Fusion",
+    link: "/hybrid"
+  },
+  {
+    id: "billing",
+    title: "Tenancy & Billing",
+    desc: "Enterprise management for municipal accounts, usage monitoring, and service tier allocation.",
+    icon: CreditCard,
+    color: "bg-[#1e293b]",
+    badge: "Admin",
+    link: "/billing"
+  },
+  {
+    id: "national-tower",
+    title: "National Control Tower",
+    desc: "Centralized oversight for provincial and national governance coordination.",
+    icon: Globe,
+    color: "bg-blue-900",
+    badge: "Government",
+    link: "/national-control-tower"
+  },
+  {
+    id: "command-center",
+    title: "Operations Control Center",
+    desc: "Ward-level operational cockpit with GIS mapping and automated case routing.",
+    icon: ShieldAlert,
+    color: "bg-indigo-900",
+    badge: "Ops",
+    link: "/command-center"
+  },
+  {
+    id: "queueless",
+    title: "Civic Concierge AI",
+    desc: "Public-facing service layer for document preparation and appointment optimization.",
+    icon: Clock,
+    color: "bg-indigo-500",
+    badge: "Public",
+    link: "/queueless"
+  },
+  {
+    id: "munifix",
+    title: "Incident Engine",
+    desc: "Digital service for generating formal municipal verification and reporting records.",
+    icon: AlertTriangle,
+    color: "bg-red-900",
+    badge: "Service",
+    link: "/munifix"
+  }
+,
+  {
+    id: "taxmate",
+    title: "SpazaAI TaxMate",
+    desc: "Calculate SARS Turnover Tax, track brackets, and stay compliant automatically.",
+    icon: Calculator,
+    color: "bg-za-green",
+    badge: "Business",
+    link: "/taxmate"
+  },
   {
     id: "grants",
     title: "Grant & Support Finder",
@@ -59,26 +139,32 @@ export default function NavigatorPage() {
     show: { opacity: 1, y: 0 }
   };
 
+  const handleToolClick = (tool: typeof NAV_TOOLS[0]) => {
+    if (tool.link) {
+      window.location.href = tool.link;
+    } else {
+      setSelectedTool(tool.id);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#0A0A0E]">
       <Header />
       
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <header className="mb-12">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="w-12 h-12 rounded-2xl bg-gradient-za flex items-center justify-center mb-6"
-          >
-            <Compass className="w-6 h-6 text-white" />
-          </motion.div>
-          <h1 className="text-4xl font-black text-white mb-4 tracking-tight">
-            South African <span className="text-gradient-za">Civic Navigator.</span>
+        <section className="mb-12">
+          <div className="flex items-center gap-3 text-indigo-400 font-bold text-xs uppercase tracking-widest mb-3">
+            <Zap size={14} />
+            Unified Control Plane
+          </div>
+          <h1 className="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-white uppercase">
+            Civic<span className="text-indigo-500">OS</span>
           </h1>
-          <p className="text-[var(--color-muted)] text-lg max-w-2xl">
-            Empowering South Africans with knowledge. Find social support, understand your 11-language legal rights, and navigate government bureaucracy with AI.
+          <p className="text-slate-400 text-lg max-w-2xl font-medium">
+            Municipal Infrastructure Intelligence Platform. National-scale situational awareness, 
+            AI-driven crisis prediction, and automated service coordination.
           </p>
-        </header>
+        </section>
 
         <motion.div 
           variants={container}
@@ -90,7 +176,7 @@ export default function NavigatorPage() {
             <motion.button
               variants={item}
               key={tool.id}
-              onClick={() => setSelectedTool(tool.id)}
+              onClick={() => handleToolClick(tool)}
               className={`card group text-left transition-all relative overflow-hidden ${
                 selectedTool === tool.id ? 'ring-2 ring-za-green/50 border-za-green' : 'hover:border-za-green/30'
               }`}

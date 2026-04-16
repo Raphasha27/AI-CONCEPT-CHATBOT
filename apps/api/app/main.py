@@ -36,7 +36,10 @@ async def lifespan(app: FastAPI):
 
 
 # Rate limiter
-limiter = Limiter(key_func=get_remote_address)
+limiter = Limiter(
+    key_func=get_remote_address, 
+    default_limits=[f"{settings.RATE_LIMIT_PER_MINUTE}/minute"]
+)
 
 app = FastAPI(
     title="VerifyZA API",

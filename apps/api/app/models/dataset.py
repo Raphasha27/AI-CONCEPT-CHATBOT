@@ -85,17 +85,28 @@ class MunicipalReport(Base):
     __tablename__ = "municipal_reports"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
-    user_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True
+    tracking_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), default=uuid.uuid4, unique=True, index=True)
+    user_id: Mapped[int | None] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"), nullable=True, index=True
     )
     category: Mapped[str] = mapped_column(String(100), nullable=False)
     urgency_score: Mapped[int] = mapped_column(Integer, default=1)
     location: Mapped[str | None] = mapped_column(String(500), nullable=True)
+    latitude: Mapped[float | None] = mapped_column(Float, nullable=True)
+    longitude: Mapped[float | None] = mapped_column(Float, nullable=True)
+    ward: Mapped[str | None] = mapped_column(String(100), nullable=True)
+    households_affected: Mapped[int] = mapped_column(Integer, default=1)
     description: Mapped[str] = mapped_column(Text, nullable=False)
     municipality: Mapped[str | None] = mapped_column(String(255), nullable=True)
     suggested_department: Mapped[str] = mapped_column(String(255), nullable=False)
     generated_report: Mapped[str] = mapped_column(Text, nullable=False)
-    status: Mapped[str] = mapped_column(String(50), default="draft")
+    evidence_urls: Mapped[dict] = mapped_column(JSONB, default=list)
+    is_anonymous: Mapped[bool] = mapped_column(Integer, default=False)
+    upvotes: Mapped[int] = mapped_column(Integer, default=0)
+    status: Mapped[str] = mapped_column(String(50), default="submitted")  # submitted, acknowledged, in_progress, resolved, escalated
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=lambda: datetime.now(timezone.utc)
     )
+    resolved_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+    user = relationship("User", back_populates="municipal_reports")

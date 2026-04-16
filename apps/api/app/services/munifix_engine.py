@@ -2,7 +2,14 @@
 MuniFix AI Engine — categorisation, urgency scoring, and report generation.
 """
 import re
+import json
+import structlog
 from typing import Optional
+from app.core.config import settings
+from openai import AsyncOpenAI
+
+log = structlog.get_logger()
+client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY) if settings.OPENAI_API_KEY else None
 
 
 CATEGORY_KEYWORDS: dict[str, list[str]] = {
@@ -80,8 +87,8 @@ def compute_urgency(description: str) -> int:
 
 def generate_report(
     description: str,
-    location: Optional[str],
-    municipality: Optional[str],
+    location: Optional[str] = None,
+    municipality: Optional[str] = None,
 ) -> dict:
     description = _sanitize(description)
     location = _sanitize(location) if location else "Not provided"
@@ -132,3 +139,77 @@ Report Reference: AUTO-{municipality[:3].upper() if municipality != 'Not provide
         "suggested_department": department,
         "generated_report": report_text,
     }
+
+
+async def generate_report_ai(
+    description: str,
+    location: Optional[str] = None,
+    municipality: Optional[str] = None,
+    ward: Optional[str] = None,
+    households: int = 1,
+    severity: int = 2,
+    language: str = "English"
+) -> dict:
+    """
+    Advanced AI report generation with professional rewriting and translation.
+    """
+    category = detect_category(description)
+    department = DEPARTMENTS.get(category, DEPARTMENTS["general"])
+    urgency = max(severity, compute_urgency(description))
+
+    if not client:
+        # Fallback to rule-based template
+        report = generate_report(description, location, municipality)
+        return {**report, "language": "English", "ai_optimized": False}
+
+    system_prompt = f"""You are the MuniFix AI Professional Complaint Writer.
+Your goal is to turn a citizen's raw complaint into a high-impact, formal municipal service letter.
+
+CONTEXT:
+- Authority: South African Local Government (Section 152 of the Constitution)
+- Category: {category}
+- Target Department: {department}
+- Language: {language}
+- Severity: {urgency}/5
+
+STRICT RULES:
+1. Use professional, legalistic municipal language (e.g., 'formal notification', 'service delivery failure', 'mitigate risk').
+2. Cite Section 152 of the South African Constitution.
+3. Be firm but polite.
+4. Include a clear reference number placeholder (REF-XXXX).
+5. Output ONLY the polished report text in {language}.
+"""
+
+    user_input = f"""
+Complaint: {description}
+Location: {location}
+Municipality: {municipality}
+Ward: {ward}
+Households Affected: {households}
+Severity: {urgency}/5
+"""
+
+    try:
+        response = await client.chat.completions.create(
+            model=settings.OPENAI_MODEL,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_input},
+            ],
+            temperature=0.3,
+            max_tokens=1500,
+        )
+        polished_text = response.choices[0].message.content.strip()
+        
+        return {
+            "category": category,
+            "urgency_score": urgency,
+            "suggested_department": department,
+            "generated_report": polished_text,
+            "language": language,
+            "ai_optimized": True
+        }
+    except Exception as e:
+        log.error("AI report generation failed", error=str(e))
+        report = generate_report(description, location, municipality)
+        return {**report, "language": "English", "ai_optimized": False}
