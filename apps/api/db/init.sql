@@ -1,5 +1,5 @@
 -- ============================================================
--- VerifyZA / MuniFix AI — PostgreSQL + pgvector Schema
+-- SizweOS National Intelligence — PostgreSQL + pgvector Schema
 -- Run this on Supabase SQL editor or locally after docker-compose up
 -- ============================================================
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 -- Seed System Tenant
-INSERT INTO tenants (id, name, type) VALUES ('system-core', 'VerifyZA System Core', 'system') ON CONFLICT DO NOTHING;
+INSERT INTO tenants (id, name, type) VALUES ('system-core', 'SizweOS Sovereign Core', 'system') ON CONFLICT DO NOTHING;
 
 -- ── Chat Sessions ─────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS chat_sessions (
@@ -235,7 +235,7 @@ CREATE INDEX IF NOT EXISTS idx_slots_office ON time_slots(office_id);
 -- Password: Admin@1234 (bcrypt hash — change on first login!)
 INSERT INTO users (email, full_name, hashed_password, role)
 VALUES (
-    'admin@verifyza.co.za',
+    'admin@sizweos.co.za',
     'System Administrator',
     '$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBpj2VKRbJYG2u',
     'admin'

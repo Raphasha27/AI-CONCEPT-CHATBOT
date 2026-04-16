@@ -52,16 +52,16 @@ export default function LandingPage() {
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 py-6 border-b border-surface-border max-w-7xl mx-auto w-full">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-za flex items-center justify-center text-white font-black text-xs shadow-lg shadow-za-green/10">
-            QL
+          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-xs shadow-lg shadow-blue-500/10">
+            SZ
           </div>
           <div className="flex flex-col">
-            <span className="font-black text-xl tracking-tight leading-none uppercase">QueueLess AI™</span>
-            <span className="text-[10px] text-za-green font-bold uppercase tracking-widest mt-0.5">National Civic Concierge</span>
+            <span className="font-black text-xl tracking-tight leading-none uppercase">SizweOS™</span>
+            <span className="text-[10px] text-blue-500 font-bold uppercase tracking-widest mt-0.5">National Infrastructure Intelligence</span>
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <Link href="/queueless" className="hidden lg:block text-sm font-bold text-white transition-colors border-b-2 border-za-green pb-1">QueueLess AI</Link>
+          <Link href="/civicos" className="hidden lg:block text-sm font-bold text-white transition-colors border-b-2 border-blue-500 pb-1">Sizwe Dashboard</Link>
           <Link href="/navigator" className="hidden md:block text-sm font-bold text-[var(--color-muted)] hover:text-white transition-colors">Navigator</Link>
           <Link href="/spaza" className="hidden md:block text-sm font-bold text-[var(--color-muted)] hover:text-white transition-colors">SpazaAI</Link>
           <div className="w-px h-4 bg-surface-border hidden md:block" />
@@ -73,9 +73,9 @@ export default function LandingPage() {
             </Link>
           ) : (
             <>
-              <Link href="/auth" className="text-sm font-bold hover:text-za-green transition-colors">Login</Link>
-              <Link href="/auth?mode=register" className="btn-primary text-sm px-6 py-2.5 shadow-xl shadow-za-green/20">
-                Join Community
+              <Link href="/auth" className="text-sm font-bold hover:text-blue-500 transition-colors">Login</Link>
+              <Link href="/auth?mode=register" className="btn-primary text-sm px-6 py-2.5 shadow-xl shadow-blue-500/20">
+                Join Network
               </Link>
             </>
           )}
@@ -84,31 +84,31 @@ export default function LandingPage() {
 
       {/* Hero */}
       <section className="relative px-6 py-24 text-center max-w-6xl mx-auto w-full overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-za-green/5 rounded-full blur-[120px] -z-10" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] -z-10" />
         
-        <div className="inline-flex items-center gap-2 bg-za-green/10 border border-za-green/20 text-za-green text-[11px] font-black px-4 py-2 rounded-full mb-8 uppercase tracking-[0.1em]">
-          🇿🇦 Your 24/7 Government Process Assistant
+        <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[11px] font-black px-4 py-2 rounded-full mb-8 uppercase tracking-[0.1em]">
+          🇿🇦 National Civic Intelligence Operating System
         </div>
 
         <h1 className="text-5xl sm:text-7xl font-black tracking-tighter leading-[0.95] mb-8">
-          Skip the Stress, <br />
-          <span className="bg-gradient-to-r from-za-green via-za-gold to-white bg-clip-text text-transparent italic">
-            Not the Process.
+          The Pulse of <br />
+          <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-white bg-clip-text text-transparent italic">
+            The Nation.
           </span>
         </h1>
 
         <p className="text-[var(--color-muted)] text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-          QueueLess AI helps you prepare documents, book appointments, and 
-          <span className="text-white font-bold ml-1">avoid the long queues</span> at Home Affairs and the Traffic Dept. 
-          Verify credentials, report service delivery issues, and scale your local business.
+          SizweOS aggregates real-time infrastructure signals, verifications, and economic data into a 
+          <span className="text-white font-bold ml-1">unified national intelligence layer</span>. 
+          Empowering citizens and municipalities through verified reliability.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-          <Link href="/auth?mode=register" className="w-full sm:w-auto btn-primary text-lg px-10 py-4 shadow-2xl shadow-za-green/20 scale-105 hover:scale-110 transition-transform">
-            Start Your Journey <ArrowRight className="w-5 h-5" />
+          <Link href="/auth?mode=register" className="w-full sm:w-auto btn-primary bg-blue-600 hover:bg-blue-500 text-lg px-10 py-4 shadow-2xl shadow-blue-500/20 scale-105 hover:scale-110 transition-transform border-none">
+            Get Sizwe Access <ArrowRight className="w-5 h-5" />
           </Link>
-          <Link href="/report" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white font-bold px-10 py-4 rounded-2xl hover:bg-white/10 transition-all">
-            Report a Service Issue
+          <Link href="/navigator" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white font-bold px-10 py-4 rounded-2xl hover:bg-white/10 transition-all">
+            Explore Navigator
           </Link>
         </div>
 
@@ -179,14 +179,14 @@ export default function LandingPage() {
       <section className="px-6 py-32 overflow-hidden bg-gradient-to-b from-[#080809] to-surface-1">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
-             <div className="absolute -inset-20 bg-za-green/5 rounded-full blur-[100px] pointer-events-none" />
+             <div className="absolute -inset-20 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
              {/* Mock App Screens */}
              <div className="flex gap-6 justify-center">
                 <div className="w-[280px] h-[580px] rounded-[3rem] bg-black p-2 border border-white/10 shadow-2xl rotate-[-5deg] transform translate-y-10 hidden sm:block">
                    <div className="w-full h-full bg-surface-1 rounded-[2.5rem] overflow-hidden p-6 pt-12 relative">
                       <div className="flex justify-between items-center mb-10">
-                         <div className="w-10 h-10 rounded-xl bg-gradient-za flex items-center justify-center text-[10px] font-black">VZ</div>
-                         <div className="w-2 h-2 rounded-full bg-za-green" />
+                         <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-[10px] font-black">SZ</div>
+                         <div className="w-2 h-2 rounded-full bg-blue-500" />
                       </div>
                       <div className="h-[2px] w-1/2 bg-white/20 rounded mb-4" />
                       <div className="h-[2px] w-1/3 bg-white/10 rounded mb-10" />
@@ -197,7 +197,7 @@ export default function LandingPage() {
                         </div>
                       ))}
                       <div className="absolute bottom-8 left-0 right-0 px-6">
-                        <div className="w-full h-14 bg-za-green rounded-2xl flex items-center justify-center font-black shadow-xl shadow-za-green/20">Verify Document</div>
+                        <div className="w-full h-14 bg-blue-600 rounded-2xl flex items-center justify-center font-black shadow-xl shadow-blue-500/20">Verify Document</div>
                       </div>
                    </div>
                 </div>
@@ -215,7 +215,7 @@ export default function LandingPage() {
                       </div>
                       <div className="flex gap-2 mb-8">
                          <div className="flex-1 h-20 bg-white/5 rounded-2xl border border-white/10" />
-                         <div className="flex-1 h-20 bg-za-green/10 rounded-2xl border border-za-green/20" />
+                         <div className="flex-1 h-20 bg-blue-500/10 rounded-2xl border border-blue-500/20" />
                       </div>
                       <div className="absolute bottom-8 left-0 right-0 px-6">
                         <div className="w-full h-14 bg-orange-500 rounded-2xl flex items-center justify-center font-black shadow-xl shadow-orange-500/20">Restock Scan</div>
@@ -225,9 +225,9 @@ export default function LandingPage() {
              </div>
           </div>
           <div className="text-center lg:text-left">
-            <h2 className="text-4xl sm:text-5xl font-black mb-8 leading-tight">The VerifyZA App. <br /><span className="text-za-green italic">Coming Soon to Stores.</span></h2>
+            <h2 className="text-4xl sm:text-5xl font-black mb-8 leading-tight">The SizweOS App. <br /><span className="text-blue-500 italic">Sovereign Mobile Intelligence.</span></h2>
             <p className="text-[var(--color-muted)] text-xl leading-relaxed mb-12 max-w-xl mx-auto lg:mx-0">
-               We’re building a native mobile experience for South African vendors and citizens. No data? Low signal? No problem. Play Store and iOS versions are reaching community beta.
+               We’re building a native mobile experience for the nation. No data? Low signal? No problem. Play Store and iOS versions are reaching national beta.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                <button className="flex items-center gap-4 bg-white text-black px-8 py-4 rounded-2xl transform hover:scale-105 transition-all shadow-xl shadow-white/5">
@@ -254,16 +254,16 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row gap-20">
             <div className="flex-1">
-              <h2 className="text-4xl font-black mb-8">What our Community says.</h2>
+              <h2 className="text-4xl font-black mb-8">Citizen Voices.</h2>
               <div className="space-y-6">
-                <div className="card p-8 border-za-green/20 bg-za-green/5 relative overflow-hidden">
-                   <div className="p-4 rounded-xl bg-za-green text-white absolute -top-4 -right-4 font-black rotate-12">"Real Impact"</div>
-                   <p className="text-lg text-white font-medium italic mb-6 leading-relaxed">"VerifyZA saved my business. Checking a doctor's credentials before school registration and using SpazaAI to manage my shop's cash flow in Khayelitsha has been a game-changer."</p>
+                <div className="card p-8 border-blue-500/20 bg-blue-500/5 relative overflow-hidden">
+                   <div className="p-4 rounded-xl bg-blue-600 text-white absolute -top-4 -right-4 font-black rotate-12">"National Trust"</div>
+                   <p className="text-lg text-white font-medium italic mb-6 leading-relaxed">"SizweOS changed how we interact with the city. Using the national navigator to verify infrastructure status in real-time has made us feel heard and empowered."</p>
                    <div className="flex items-center gap-4">
                      <div className="w-12 h-12 rounded-full bg-surface-3 flex items-center justify-center font-black">SD</div>
                      <div>
                        <p className="font-bold">Sipho Dlamini</p>
-                       <p className="text-xs text-[var(--color-muted)] font-black uppercase tracking-widest">SME Owner · Cape Town</p>
+                       <p className="text-xs text-[var(--color-muted)] font-black uppercase tracking-widest">Community Leader · Soweto</p>
                      </div>
                    </div>
                 </div>
@@ -271,12 +271,12 @@ export default function LandingPage() {
             </div>
             <div className="flex-1">
               <div className="card p-10 bg-surface-2 h-full border-surface-border flex flex-col justify-center">
-                 <h3 className="text-3xl font-black mb-6">Support the Scaling.</h3>
-                 <p className="text-[var(--color-muted)] mb-8">Are you an NGO, community leader, or government official? Help us bring VerifyZA to more communities.</p>
+                <h3 className="text-3xl font-black mb-6">Scale the Network.</h3>
+                 <p className="text-[var(--color-muted)] mb-8">Are you a municipal head, developer, or community official? Help us integrate SizweOS into your region.</p>
                  <div className="space-y-4">
-                    <input className="w-full bg-surface-1 border border-surface-border rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-za-green" placeholder="Community Name" />
-                    <input className="w-full bg-surface-1 border border-surface-border rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-za-green" placeholder="Contact Details" />
-                    <button className="w-full btn-primary py-4">Request Local Rollout</button>
+                    <input className="w-full bg-surface-1 border border-surface-border rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-blue-500" placeholder="Municipality / Region" />
+                    <input className="w-full bg-surface-1 border border-surface-border rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-blue-500" placeholder="Official Email" />
+                    <button className="w-full btn-primary bg-blue-600 hover:bg-blue-500 py-4">Request National Onboarding</button>
                  </div>
               </div>
             </div>
@@ -289,44 +289,44 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
            <div className="max-w-sm">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-xl bg-gradient-za flex items-center justify-center text-white font-black text-[10px]">VZ</div>
-                <span className="font-black text-xl tracking-tight uppercase">VerifyZA</span>
+                <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-[10px]">SZ</div>
+                <span className="font-black text-xl tracking-tight uppercase">SizweOS</span>
               </div>
-              <p className="text-sm text-[var(--color-muted)] leading-relaxed underline decoration-za-green/40">
-                A national civic platform empowering South African citizens through identity verification, municipal accountability, and informal economy business intelligence.
+              <p className="text-sm text-[var(--color-muted)] leading-relaxed underline decoration-blue-500/40">
+                A sovereign national intelligence platform empowering South African citizens through identity verification, infrastructure monitoring, and civic operating loops.
               </p>
            </div>
            <div className="grid grid-cols-2 sm:grid-cols-3 gap-12">
               <div>
-                <p className="text-xs font-black uppercase tracking-widest text-[#555] mb-6">Solutions</p>
+                <p className="text-xs font-black uppercase tracking-widest text-slate-500 mb-6">Intelligence</p>
                 <ul className="space-y-4 text-sm font-bold text-[var(--color-muted)]">
-                  <li><Link href="/chat" className="hover:text-za-green">Professional Check</Link></li>
-                  <li><Link href="/report" className="hover:text-za-green">MuniFix Action</Link></li>
-                  <li><Link href="/navigator" className="hover:text-za-green">Grant Navigator</Link></li>
-                  <li><Link href="/spaza" className="hover:text-za-green">SpazaAI Intelligence</Link></li>
+                  <li><Link href="/civicos" className="hover:text-blue-400">City Analytics</Link></li>
+                  <li><Link href="/hybrid" className="hover:text-blue-400">National Fusion</Link></li>
+                  <li><Link href="/navigator" className="hover:text-blue-400">Sovereign Navigator</Link></li>
+                  <li><Link href="/spaza" className="hover:text-blue-400">Economic Intel</Link></li>
                 </ul>
               </div>
               <div>
-                <p className="text-xs font-black uppercase tracking-widest text-[#555] mb-6">Account</p>
+                <p className="text-xs font-black uppercase tracking-widest text-slate-500 mb-6">Platform</p>
                 <ul className="space-y-4 text-sm font-bold text-[var(--color-muted)]">
-                   <li><Link href="/dashboard" className="hover:text-za-green">Dashboard</Link></li>
-                   <li><Link href="/auth" className="hover:text-za-green">Login</Link></li>
-                   <li><Link href="/auth?mode=register" className="hover:text-za-green">Register</Link></li>
+                   <li><Link href="/dashboard" className="hover:text-blue-400">Cockpit</Link></li>
+                   <li><Link href="/auth" className="hover:text-blue-400">Identity Login</Link></li>
+                   <li><Link href="/billing" className="hover:text-blue-400">Tenancy</Link></li>
                 </ul>
               </div>
               <div>
-                <p className="text-xs font-black uppercase tracking-widest text-[#555] mb-6">Legal</p>
+                <p className="text-xs font-black uppercase tracking-widest text-slate-500 mb-6">Governance</p>
                 <ul className="space-y-4 text-sm font-bold text-[var(--color-muted)]">
-                   <li>Privacy Policy</li>
-                   <li>Terms of Use</li>
-                   <li>Community Guidelines</li>
+                   <li>Sovereignty</li>
+                   <li>Trust Layer</li>
+                   <li>Community Loop</li>
                 </ul>
               </div>
            </div>
         </div>
         <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-surface-border flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-black uppercase tracking-widest text-[#444]">
-           <p>© 2026 VerifyZA — Scaling SA Civic Infrastructure</p>
-           <p>🇿🇦 Made for South Africa</p>
+           <p>© 2026 SizweOS — Sovereign National Intelligence Platform</p>
+           <p>🇿🇦 Built for South Africa</p>
         </div>
       </footer>
     </main>

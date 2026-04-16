@@ -443,7 +443,7 @@ export default function SpazaPage() {
            </button>
         </div>
         <p className="text-[var(--color-muted)] text-sm">
-          &copy; 2026 VerifyZA. All rights reserved. Scaling the South African local economy.
+          &copy; 2026 SizweOS — National Infrastructure Intelligence Platform.
         </p>
       </footer>
     </div>

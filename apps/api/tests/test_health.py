@@ -10,7 +10,7 @@ async def test_health(client):
     assert response.status_code == 200
     data = response.json()
     assert data["status"] == "healthy"
-    assert data["service"] == "VerifyZA API"
+    assert data["service"] == "SizweOS API"
 
 
 @pytest.mark.asyncio

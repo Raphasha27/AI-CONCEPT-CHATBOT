@@ -12,12 +12,12 @@ export function exportChatToPDF(messages: Message[], sessionTitle: string) {
   let y = margin;
 
   // Header
-  doc.setFillColor(0, 122, 77);
+  doc.setFillColor(0, 71, 171);
   doc.rect(0, 0, pageW, 60, "F");
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(18);
   doc.setFont("helvetica", "bold");
-  doc.text("VerifyZA Chat Export", margin, 38);
+  doc.text("SizweOS Intelligence Export", margin, 38);
 
   doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
@@ -33,13 +33,13 @@ export function exportChatToPDF(messages: Message[], sessionTitle: string) {
 
   messages.forEach((msg) => {
     const isUser = msg.role === "user";
-    const label = isUser ? "You" : "VerifyZA AI";
-    const bgColor: [number, number, number] = isUser ? [235, 250, 245] : [245, 245, 248];
+    const label = isUser ? "You" : "SizweOS Intelligence";
+    const bgColor: [number, number, number] = isUser ? [235, 245, 255] : [245, 245, 248];
 
     // Label
     doc.setFontSize(9);
     doc.setFont("helvetica", "bold");
-    doc.setTextColor(isUser ? 0 : 90, isUser ? 122 : 90, isUser ? 77 : 100);
+    doc.setTextColor(isUser ? 0 : 70, isUser ? 71 : 70, isUser ? 171 : 70);
     doc.text(label, margin, y);
     y += 14;
 
@@ -71,10 +71,10 @@ export function exportChatToPDF(messages: Message[], sessionTitle: string) {
   doc.setFontSize(8);
   doc.setTextColor(150, 150, 150);
   doc.text(
-    "VerifyZA — AI Compliance Verification Platform | South Africa",
+    "SizweOS — National Infrastructure Intelligence Platform | South Africa",
     margin,
     doc.internal.pageSize.getHeight() - 20
   );
 
-  doc.save(`VerifyZA_Chat_${sessionTitle.slice(0, 30)}_${Date.now()}.pdf`);
+  doc.save(`SizweOS_Intel_${sessionTitle.slice(0, 30)}_${Date.now()}.pdf`);
 }

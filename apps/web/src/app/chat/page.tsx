@@ -166,7 +166,7 @@ export default function ChatPage() {
             <div className="p-4 border-b border-surface-border">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-7 h-7 rounded-lg bg-gradient-za flex items-center justify-center text-white font-bold text-xs">VZ</div>
-                <span className="font-bold text-sm">VerifyZA</span>
+                <span className="font-bold text-sm">SizweOS AI</span>
               </div>
               <button onClick={newSession} className="btn-primary w-full text-sm">
                 <Plus className="w-4 h-4" /> New Chat
@@ -394,7 +394,7 @@ export default function ChatPage() {
             </button>
           </div>
           <p className="text-center text-[10px] text-[var(--color-muted)] mt-2">
-            VerifyZA may not reflect real-time registration status. Always verify via official body websites.
+            SizweOS may not reflect real-time registration status. Always verify via official body websites.
           </p>
         </div>
       </div>

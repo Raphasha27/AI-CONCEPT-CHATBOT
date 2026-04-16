@@ -1,5 +1,5 @@
 """
-VerifyZA FastAPI Application Entry Point
+SizweOS FastAPI Application Entry Point
 """
 from contextlib import asynccontextmanager
 
@@ -25,13 +25,13 @@ log = structlog.get_logger()
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan — startup + shutdown."""
-    log.info("Starting VerifyZA API", environment=settings.ENVIRONMENT)
+    log.info("Starting SizweOS API", environment=settings.ENVIRONMENT)
     # Create all tables
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     log.info("Database tables initialized")
     yield
-    log.info("Shutting down VerifyZA API")
+    log.info("Shutting down SizweOS API")
     await engine.dispose()
 
 
@@ -42,9 +42,9 @@ limiter = Limiter(
 )
 
 app = FastAPI(
-    title="VerifyZA API",
-    description="AI Compliance & Accreditation Verification Platform for South Africa",
-    version="1.0.0",
+    title="SizweOS API",
+    description="The sovereign national OS for South Africa. National Infrastructure Intelligence Platform.",
+    version="3.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
     lifespan=lifespan,
@@ -80,8 +80,8 @@ async def health_check():
     return JSONResponse(
         content={
             "status": "healthy",
-            "service": "VerifyZA API",
-            "version": "1.0.0",
+            "service": "SizweOS API",
+            "version": "3.0.0",
             "environment": settings.ENVIRONMENT,
         }
     )
@@ -89,4 +89,4 @@ async def health_check():
 
 @app.get("/", tags=["Root"])
 async def root():
-    return {"message": "VerifyZA API — South Africa Compliance Verification Platform"}
+    return {"message": "SizweOS API — National Infrastructure Intelligence Platform"}

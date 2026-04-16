@@ -22,7 +22,7 @@ class Settings(BaseSettings):
     API_PORT: int = 8000
 
     # Database
-    DATABASE_URL: str = "postgresql+asyncpg://postgres:password@localhost:5432/verifyzadb"
+    DATABASE_URL: str = "postgresql+asyncpg://postgres:password@localhost:5432/sizweosdb"
 
     # OpenAI
     OPENAI_API_KEY: str = ""

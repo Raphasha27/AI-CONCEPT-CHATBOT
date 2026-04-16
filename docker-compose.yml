@@ -4,12 +4,12 @@ services:
   # ── PostgreSQL + pgvector ─────────────────────────────────
   db:
     image: pgvector/pgvector:pg16
-    container_name: verifyza_db
+    container_name: sizweos_db
     restart: unless-stopped
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
-      POSTGRES_DB: ${POSTGRES_DB:-verifyzadb}
+      POSTGRES_DB: ${POSTGRES_DB:-sizweosdb}
     ports:
       - "5432:5432"
     volumes:
@@ -26,10 +26,10 @@ services:
     build:
       context: ./apps/api
       dockerfile: ../../infra/docker/Dockerfile.api
-    container_name: verifyza_api
+    container_name: sizweos_api
     restart: unless-stopped
     environment:
-      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-password}@db:5432/${POSTGRES_DB:-verifyzadb}
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-password}@db:5432/${POSTGRES_DB:-sizweosdb}
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o}
       OPENAI_EMBEDDING_MODEL: ${OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}
@@ -60,12 +60,12 @@ services:
       dockerfile: ../../infra/docker/Dockerfile.web
       args:
         NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
-        NEXT_PUBLIC_APP_NAME: ${NEXT_PUBLIC_APP_NAME:-VerifyZA}
-    container_name: verifyza_web
+        NEXT_PUBLIC_APP_NAME: ${NEXT_PUBLIC_APP_NAME:-SizweOS}
+    container_name: sizweos_web
     restart: unless-stopped
     environment:
       NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
-      NEXT_PUBLIC_APP_NAME: ${NEXT_PUBLIC_APP_NAME:-VerifyZA}
+      NEXT_PUBLIC_APP_NAME: ${NEXT_PUBLIC_APP_NAME:-SizweOS}
     ports:
       - "3000:3000"
     depends_on:
