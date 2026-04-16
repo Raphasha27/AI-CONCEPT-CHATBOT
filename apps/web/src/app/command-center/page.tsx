@@ -36,7 +36,7 @@ import {
 } from "recharts";
 
 // Mock data for initial visual pop
-const CATEGORY_COLORS = {
+const CATEGORY_COLORS: { [key: string]: string } = {
   water: "#3b82f6",
   electricity: "#eab308",
   roads: "#ef4444",

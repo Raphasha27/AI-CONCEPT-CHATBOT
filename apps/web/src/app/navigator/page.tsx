@@ -154,16 +154,16 @@ export default function NavigatorPage() {
       
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <section className="mb-12">
-          <div className="flex items-center gap-3 text-indigo-400 font-bold text-xs uppercase tracking-widest mb-3">
+          <div className="flex items-center gap-3 text-blue-400 font-bold text-xs uppercase tracking-widest mb-3">
             <Zap size={14} />
-            Unified Control Plane
+            Unified National Control Plane
           </div>
           <h1 className="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-white uppercase">
-            Civic<span className="text-indigo-500">OS</span>
+            Sizwe<span className="text-blue-500">OS</span>
           </h1>
           <p className="text-slate-400 text-lg max-w-2xl font-medium">
-            Municipal Infrastructure Intelligence Platform. National-scale situational awareness, 
-            AI-driven crisis prediction, and automated service coordination.
+            Sovereign National Infrastructure Intelligence. National-scale situational awareness, 
+            AI-driven crisis prediction, and automated multi-agency coordination.
           </p>
         </section>
 
@@ -179,11 +179,11 @@ export default function NavigatorPage() {
               key={tool.id}
               onClick={() => handleToolClick(tool)}
               className={`card group text-left transition-all relative overflow-hidden ${
-                selectedTool === tool.id ? 'ring-2 ring-za-green/50 border-za-green' : 'hover:border-za-green/30'
+                selectedTool === tool.id ? 'ring-2 ring-blue-500/50 border-blue-600' : 'hover:border-blue-500/30'
               }`}
             >
               {tool.badge && (
-                <span className="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-surface-3 text-za-green border border-za-green/20">
+                <span className="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-surface-3 text-blue-500 border border-blue-500/20">
                   {tool.badge}
                 </span>
               )}
@@ -191,11 +191,11 @@ export default function NavigatorPage() {
                 <tool.icon className={`w-6 h-6 ${tool.color.replace('bg-', 'text-')}`} />
               </div>
               <h3 className="text-lg font-bold text-white mb-2">{tool.title}</h3>
-              <p className="text-sm text-[var(--color-muted)] mb-6 leading-relaxed">
+              <p className="text-sm text-slate-400 mb-6 leading-relaxed">
                 {tool.desc}
               </p>
-              <div className="flex items-center gap-2 text-xs font-bold text-za-green mt-auto">
-                Open Tool <ChevronRight className="w-4 h-4" />
+              <div className="flex items-center gap-2 text-xs font-bold text-blue-500 mt-auto">
+                Access Sovereign Tool <ChevronRight className="w-4 h-4" />
               </div>
             </motion.button>
           ))}
@@ -208,7 +208,7 @@ export default function NavigatorPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="card min-h-[400px] border-za-green/20 bg-gradient-to-br from-surface-1 to-[#0F1410]"
+              className="card min-h-[400px] border-blue-500/20 bg-gradient-to-br from-[#0a0a0e] to-[#0c111d]"
             >
               <div className="flex flex-col md:flex-row gap-8">
                 <div className="md:w-1/3">
@@ -216,24 +216,24 @@ export default function NavigatorPage() {
                     {NAV_TOOLS.find(t => t.id === selectedTool)?.title}
                   </h2>
                   <div className="space-y-4">
-                    <div className="flex gap-3 text-sm text-[var(--color-muted)]">
-                      <Zap className="w-5 h-5 text-za-gold shrink-0" />
+                    <div className="flex gap-3 text-sm text-slate-400">
+                      <Zap className="w-5 h-5 text-blue-500 shrink-0" />
                       <p>Answer a few questions and our AI will guide you through the official South African process.</p>
                     </div>
-                    <div className="flex gap-3 text-sm text-[var(--color-muted)]">
-                      <ShieldCheck className="w-5 h-5 text-za-green shrink-0" />
-                      <p>All data is processed securely and cited from the <strong>National Gazette</strong> and <strong>Gov.za</strong>.</p>
+                    <div className="flex gap-3 text-sm text-slate-400">
+                      <ShieldCheck className="w-5 h-5 text-blue-500 shrink-0" />
+                      <p>All data is processed securely and cited from the <strong>National Gazette</strong> and <strong>Sovereign Digital Infrastructure</strong>.</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex-1 bg-surface-2/50 rounded-2xl p-6 border border-surface-border">
+                <div className="flex-1 bg-surface-2/50 rounded-2xl p-6 border border-white/5">
                   {/* Mock Interactive Flow */}
                   <div className="space-y-6">
                     <div className="flex gap-3 items-start">
-                      <div className="w-8 h-8 rounded-full bg-za-green/20 flex items-center justify-center text-za-green text-xs font-bold">VZ</div>
-                      <div className="p-4 bg-surface-3 rounded-2xl rounded-tl-none border border-surface-border text-sm leading-relaxed">
-                        Hello! I am your South African Civic Assistant. To help you with **{NAV_TOOLS.find(t => t.id === selectedTool)?.title}**, please tell me a bit about your situation or ask a specific question.
+                      <div className="w-8 h-8 rounded-full bg-blue-600/20 flex items-center justify-center text-blue-500 text-xs font-bold">SZ</div>
+                      <div className="p-4 bg-surface-3 rounded-2xl rounded-tl-none border border-white/5 text-sm leading-relaxed text-slate-300">
+                        Hello! I am your SizweOS National Intelligence AI. To help you with **{NAV_TOOLS.find(t => t.id === selectedTool)?.title}**, please tell me a bit about your situation or ask a specific question.
                       </div>
                     </div>
 
@@ -244,18 +244,18 @@ export default function NavigatorPage() {
                         "I suffered a power surge, can I claim?",
                         "Rights at a roadblock"
                       ].map((q) => (
-                        <button key={q} className="p-3 text-left text-xs bg-surface-3 hover:bg-surface-border rounded-xl transition-colors border border-surface-border">
+                        <button key={q} className="p-3 text-left text-xs bg-surface-3 hover:bg-surface-border rounded-xl transition-colors border border-white/5 text-slate-400 hover:text-white">
                           {q}
                         </button>
                       ))}
                     </div>
 
-                    <div className="pt-6 border-t border-surface-border flex gap-3">
+                    <div className="pt-6 border-t border-white/5 flex gap-3">
                       <input 
-                        className="flex-1 bg-surface-3 border border-surface-border rounded-xl px-4 py-3 text-sm outline-none focus:border-za-green"
+                        className="flex-1 bg-[#07090e] border border-white/5 rounded-xl px-4 py-3 text-sm outline-none focus:border-blue-500 text-white"
                         placeholder="Type your question here..."
                       />
-                      <button className="btn-primary p-3">
+                      <button className="bg-blue-600 hover:bg-blue-500 p-3 rounded-xl text-white shadow-lg shadow-blue-500/20">
                         <ArrowRight className="w-4 h-4" />
                       </button>
                     </div>

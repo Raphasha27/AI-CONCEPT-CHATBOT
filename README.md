@@ -1,76 +1,80 @@
-# 🏛️ CivicOS
+![SizweOS Partner](partner_logo.png)
 
-### Municipal Infrastructure Intelligence & National Governance Platform
+# 🇿🇦 SizweOS
 
-**CivicOS** is an enterprise-grade, AI-powered operating system for modern municipalities and national governments. It replaces fragmented, manual service delivery with a unified common operating picture—fusing real-time citizen reporting, predictive infrastructure modeling, and multi-agency coordination.
+### National Infrastructure Intelligence & Sovereign Operating System
 
----
-
-## 🚀 Vision
-CivicOS empowers governments to transition from **Reactive Failure Management** to **Predictive Infrastructure Resilience**. By using AI to sense, analyze, and forecast crises, CivicOS ensures that municipal services—water, electricity, and roads—are managed with unprecedented situational awareness.
-
-## 🛠️ Key Modules
-
-### 1. 📊 City Analytics Dashboard
-The executive cockpit for municipal staff. Monitor active incidents, track service delivery KPIs, and identify high-risk clusters across city wards in a single, data-dense interface.
-
-### 2. 📡 National Fusion Layer (NIIN)
-A high-fidelity common operating picture that merges real-world citizen reports with live digital-twin simulations. Predict failure zones 6-12 hours before they occur using our proprietary **Risk Velocity Engine**.
-
-### 3. 🚨 Operations Command Center
-A ward-level GIS mapping system for operational dispatch. Visualize infrastructure decay, active maintenance fleets, and community impact zones with sub-meter precision.
-
-### 4. 🧠 Autonomous Governance Loop (NAGOS)
-A closed-loop decision intelligence system that senses municipal signals, analyzes escalation risk, and recommends optimal dispatch strategies with a human-in-the-loop audit trail.
-
-### 5. 💰 Multi-Tenant SaaS Engine
-Enterprise billing and tenancy management for provinces and national councils. Built-in usage metering for AI resources, simulation cycles, and crisis predictions.
+**SizweOS** is an enterprise-grade, national intelligence platform designed for the sovereign management of South African infrastructure, municipal services, and economic health. By fusing real-time citizen signals with predictive AI modeling, SizweOS provides a unified "National Common Operating Picture" for government, municipalities, and the private sector.
 
 ---
 
-## 🌍 Tech Stack
+## 🚀 The Mission
+SizweOS transitions national governance from **Reactive Crisis Management** to **Sovereign Predictive Resilience**. It is built to solve the "Trust Deficit" by providing absolute transparency, automated accountability, and high-fidelity situational awareness for all South Africans.
 
-- **Frontend**: Next.js 14, TailwindCSS, Framer Motion, Recharts.
-- **Backend**: FastAPI, Pydantic, structlog.
-- **Database**: PostgreSQL (pgvector), Supabase.
-- **AI/ML**: Proprietary Crisis Prediction Models, NLP classifiers.
-- **Infrastructure**: Docker, Vercel, Railway.
+## 🏛️ System Core Modules
+
+### 1. 📊 Sizwe Intelligence Cockpit
+The primary executive command center. Monitor national infrastructure vitals, track multi-agency service delivery KPIs, and visualize regional risk clusters in a high-density, data-rich interface.
+
+### 2. 📡 National Fusion Layer (NFL)
+A real-time intelligence hub that aggregates data from citizen reports (MuniFix), sensors, and simulated digital shadows. Predict infrastructure failure events before they impact the grid using our **Risk Velocity Engine**.
+
+### 3. 🗺️ Sovereign GIS Command Center
+A GIS-powered national operating cockpit. Map every ward, infrastructure asset, and service delivery point with sub-meter precision to optimize maintenance dispatch and resource allocation.
+
+### 4. 🧠 Autonomous Governance Loop (AGL)
+A closed-loop decision system that senses municipal signals, analyzes escalation risk, and generates ranked dispatch recommendations with full audit traceability for national departments.
+
+### 5. 🏥 National Verification Tier
+A reliable cross-reference layer for identifying and verifying professional credentials (HPCSA, SAQA, CIPC) and business compliance instantly via AI.
+
+### 6. 🏪 SpazaAI Economic Engine
+Specialized business intelligence for the informal economy. Helping local vendors manage cash flow, predict inventory needs, and maintain SARS compliance.
 
 ---
 
-## 📦 Getting Started
+## 🌍 Technology Stack
 
-### Prerequisites
-- Node.js 18+
-- Python 3.11+
-- Supabase Account
+- **L1 (Frontend)**: Next.js 14, TailwindCSS (Sovereign Blue Design System), Framer Motion, Recharts.
+- **L2 (Backend)**: FastAPI (Python 3.11), Pydantic v2, structlog.
+- **L3 (Intelligence)**: PostgreSQL (pgvector), Supabase, AI Crisis Forecasters.
+- **L4 (Ops)**: Docker (SizweOS Edge), Vercel, Railway.
 
-### Setup
+---
 
-1. **Clone the Repo**
+## 📦 Deployment & Setup
+
+### Requirements
+- **Runtime**: Node.js 18+ | Python 3.11+
+- **Infrastructure**: Supabase (PostGIS & pgvector enabled)
+- **Deployment**: Vercel (Frontend) | Railway (Backend)
+
+### Quick Launch
+
+1. **Clone the National Repository**
    ```bash
    git clone https://github.com/Raphasha27/AI-CONCEPT-CHATBOT.git
    cd AI-CONCEPT-CHATBOT
    ```
 
-2. **Backend Installation**
+2. **Initialize Sovereign API**
    ```bash
    cd apps/api
    pip install -r requirements.txt
-   uvicorn app.main:app --reload
+   uvicorn app.main:app --port 8000 --reload
    ```
 
-3. **Frontend Installation**
+3. **Launch Sizwe Cockpit**
    ```bash
    cd apps/web
-   npm install
+   npm install --legacy-peer-deps
    npm run dev
    ```
 
 ---
 
-## 🏢 Enterprise Positioning
-CivicOS is built for **YC-grade scalability**. It follows a strictly isolated monorepo structure, ensuring that as new cities are onboarded, the system remains performant, secure (RBAC), and observable (OpenTelemetry ready).
+## 🏢 Enterprise Architecture
+SizweOS is built for **National Scalability**. It utilizes a strictly isolated, multi-tenant monorepo architecture, ensuring data sovereignty for every municipality while maintaining a unified command structure for the national executive.
 
 ## 📄 License
-Internal / Proprietary - (c) 2026 CivicOS Team.
+Sovereign Proprietary - (c) 2026 SizweOS National Intelligence Team.

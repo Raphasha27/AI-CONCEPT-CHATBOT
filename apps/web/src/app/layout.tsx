@@ -7,12 +7,12 @@ import Providers from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: {
-    default: "SizweOS — National Infrastructure Intelligence Platform",
-    template: "%s | SizweOS",
+    default: "QueueLess AI — Premium Civic Concierge",
+    template: "%s | QueueLess AI",
   },
   description:
-    "The sovereign national OS for South Africa. AI-driven infrastructure monitoring, multi-agency coordination, and civic intelligence.",
-  keywords: ["South Africa", "CivicOS", "SizweOS", "infrastructure", "municipal", "AI", "governance"],
+    "South Africa's premier civic concierge. Skip the lines at DHA and SASSA with AI-powered appointment booking and document preparation.",
+  keywords: ["South Africa", "QueueLess AI", "DHA", "SASSA", "appointment booking", "civic concierge", "AI", "governance"],
   robots: "index, follow",
 };
 
