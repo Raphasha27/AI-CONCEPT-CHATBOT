@@ -22,7 +22,8 @@ import {
   PieChart,
   LineChart,
   Clock,
-  Sparkles
+  Sparkles,
+  FileText
 } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";

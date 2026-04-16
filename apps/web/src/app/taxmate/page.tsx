@@ -14,7 +14,8 @@ import {
   ArrowUpRight,
   ShieldCheck,
   Briefcase,
-  Info
+  Info,
+  FileText
 } from "lucide-react";
 import { taxMateAPI, spazaAPI } from "@/lib/api";
 import { toast } from "react-hot-toast";
@@ -418,6 +419,4 @@ export default function TaxMatePage() {
       </main>
     </div>
   );
-}
-
 }

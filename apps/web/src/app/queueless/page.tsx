@@ -16,7 +16,8 @@ import {
   ArrowRight,
   MessageSquare,
   FileText,
-  AlertCircle
+  AlertCircle,
+  Crown
 } from "lucide-react";
 import { queuelessAPI, chatAPI } from "@/lib/api";
 import { toast } from "react-hot-toast";
