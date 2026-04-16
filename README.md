@@ -9,13 +9,13 @@
 ---
 
 ## 🏛️ The Mission
-**QueueLess AI** is a comprehensive civic infrastructure designed to solve the "Trust Deficit" in South Africa. By providing instant verification of professional credentials, automating government appointment booking, and providing professional-grade municipal accountability, we create a transparent, efficient ecosystem for citizens and small businesses.
+**QueueLess AI** is a comprehensive civic infrastructure designed to solve the "Trust Deficit" and modernize local governance. By providing instant verification of professional credentials, automating government appointment booking, and providing professional-grade municipal accountability, we create a transparent, efficient ecosystem directly focused on enhancing and scaling the digital capabilities of the **City of Tshwane** and **City of Ekurhuleni**.
 
 ## 📱 Mobile-First Sovereign Economy
-We are scaling beyond the web. The QueueLess AI ecosystem is engineered specifically for high performance in North-to-South African environments.
+We are scaling beyond the web. The QueueLess AI ecosystem is engineered specifically for high performance in Gauteng's metropoles (Tshwane & Ekurhuleni).
 
-- **📶 Offline-First Protocol**: Secure credential check-ins and document verification without active data.
-- **🗣️ Hyper-Local NLP**: Native support for all 11 official South African languages.
+- **📶 Offline-First Protocol**: Secure credential check-ins and document verification without active data in dense urban townships.
+- **🗣️ Hyper-Local NLP**: Native support for key regional languages to ensure absolute accessibility.
 - **🖨️ Micro-Logistics Engine**: Direct thermal print integration for local vendors to issue SARS-compliant smart receipts.
 
 ---
@@ -30,13 +30,13 @@ A reliable, industrial-grade cross-reference engine for national professional ac
 - **Industrial**: CIDB Construction & Contractor Verification
 
 ### 2. 🏛️ MuniFix Infrastructure Engine
-A community-driven command tower for reporting and resolving municipal failure.
-- **Automated Claims**: Seamlessly generate legal-standard reports for water, power, and road failures.
-- **Urgency Scoring**: Mathematically calculated priority based on community impact metrics.
-- **Autonomous Advocacy**: Reports are instantly processed and routed to ward-level resolution paths.
+A community-driven command tower for reporting and resolving municipal failure in **Tshwane** and **Ekurhuleni**.
+- **Automated Claims**: Seamlessly generate legal-standard reports for water, power, and road failures calibrated for regional by-laws.
+- **Urgency Scoring**: Mathematically calculated priority based on localized community impact.
+- **Autonomous Advocacy**: Reports are instantly processed and routed directly to Ekurhuleni and Tshwane ward-level resolution paths.
 
 ### 3. 🏪 SpazaAI Economic Engine
-Professional accounting and growth intelligence for the South African spaza and township economy.
+Professional accounting and growth intelligence for the Ekurhuleni and Tshwane township economy.
 - **📊 Precision Accounting**: Cloud-sync cash flow management for local vendors.
 - **📉 Leakage Analysis**: AI-driven inventory and supply chain optimization.
 - **🧾 SARS Concierge**: Automated Turnover Tax engine for simplified micro-business compliance.
