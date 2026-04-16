@@ -2,9 +2,9 @@
 
 **Reclaiming time and trust for every citizen through world-class AI, verified reliability, and automated civic infrastructure.**
 
-[![Status](https://img.shields.io/badge/National_System-Active-00C8FF?style=for-the-badge&logo=shield)](https://queueless.co.za)
-[![Intelligence](https://img.shields.io/badge/AI_Concierge-Level_4.0-6366f1?style=for-the-badge&logo=sparkles)](https://queueless.co.za)
-[![Sovereignty](https://img.shields.io/badge/Data_Privacy-RS256_Verified-white?style=for-the-badge&logo=lighthouse)](https://queueless.co.za)
+[![Status](https://img.shields.io/badge/National_System-Active-00C8FF?style=for-the-badge&logo=shield)](https://web-chi-pink-75.vercel.app)
+[![Intelligence](https://img.shields.io/badge/AI_Concierge-Level_4.0-6366f1?style=for-the-badge&logo=sparkles)](https://web-chi-pink-75.vercel.app)
+[![Sovereignty](https://img.shields.io/badge/Data_Privacy-RS256_Verified-white?style=for-the-badge&logo=lighthouse)](https://web-chi-pink-75.vercel.app)
 
 ---
 
@@ -44,7 +44,7 @@ Professional accounting and growth intelligence for the Ekurhuleni and Tshwane t
 ---
 
 ## 🚁 Live Demo & Preview
-Explore the national cockpit today: [queueless.co.za](https://queueless.co.za)
+Explore the national cockpit today: [QueueLess App](https://web-chi-pink-75.vercel.app)
 
 ## 🏗️ Technical Stack
 QueueLess AI is built as a highly scalable monorepo ensuring professional-grade security and institutional performance.
