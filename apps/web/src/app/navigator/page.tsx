@@ -19,7 +19,8 @@ import {
   ShieldAlert,
   Globe,
   CreditCard,
-  Sparkles
+  Sparkles,
+  Activity
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
