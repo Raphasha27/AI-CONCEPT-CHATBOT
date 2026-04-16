@@ -1,0 +1,12 @@
+{
+  "name": "verifyza-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "web:dev": "npm run dev --prefix apps/web",
+    "web:build": "npm run build --prefix apps/web",
+    "web:type-check": "npm run type-check --prefix apps/web",
+    "api:dev": "cd apps/api && venv/Scripts/activate && uvicorn app.main:app --reload",
+    "type-check": "npm run web:type-check"
+  }
+}
