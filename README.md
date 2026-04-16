@@ -58,8 +58,8 @@ QueueLess AI is built as a highly scalable monorepo ensuring professional-grade 
 | **Security** | RS256 JWT, Role-Based Access (RBAC), Global Rate Limiting |
 
 ### 🚀 Live Deployment
-- **Frontend Live URL**: [VerifyZa on Vercel](https://verifyza.vercel.app/)
-*(In case of a 404, please re-run the Vercel deploy locally as the environment has been refreshed).*
+- **Frontend Live URL**: [QueueLess Web App](https://web-chi-pink-75.vercel.app)
+*(The previous link verifyza.vercel.app was retired. Please use this latest one).*
 
 ---
 
