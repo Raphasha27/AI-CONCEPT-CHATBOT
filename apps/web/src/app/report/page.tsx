@@ -12,7 +12,9 @@ import {
   Plus,
   Send,
   Loader2,
-  CheckCircle2
+  CheckCircle2,
+  Sparkles,
+  ShieldCheck
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import toast from "react-hot-toast";
@@ -39,9 +41,9 @@ export default function ReportPage() {
         municipality
       });
       setGeneratedReport(res.data);
-      toast.success("Report generated successfully!");
+      toast.success("Document generated successfully!");
     } catch (err) {
-      toast.error("Failed to generate report");
+      toast.error("Failed to generate document");
     } finally {
       setLoading(false);
     }
@@ -55,17 +57,21 @@ export default function ReportPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0E]">
+    <div className="min-h-screen bg-[#050507] text-white">
       <Header />
       
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <header className="mb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-za-gold/10 text-za-gold text-xs font-bold px-3 py-1 rounded-full mb-3">
-            <AlertCircle className="w-3 h-3" /> MuniFix AI
-          </div>
-          <h1 className="text-3xl font-extrabold text-white mb-2">Municipal Report Generator</h1>
-          <p className="text-[var(--color-muted)] max-w-xl mx-auto">
-            Generate official, legally-formatted service delivery complaint reports for any municipality in South Africa.
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+        <header className="mb-12 text-center">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[10px] font-black px-4 py-2 rounded-full mb-6 uppercase tracking-[0.2em]"
+          >
+            <Sparkles className="w-3 h-3" /> Document Concierge AI
+          </motion.div>
+          <h1 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">Generate <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Official Documents.</span></h1>
+          <p className="text-slate-400 max-w-xl mx-auto text-lg">
+            Create professional, legally-sound reports and applications that demand results from government and municipal bodies.
           </p>
         </header>
 
@@ -77,47 +83,47 @@ export default function ReportPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
             >
-              <form onSubmit={handleSubmit} className="card space-y-6">
-                <div className="space-y-4">
+              <form onSubmit={handleSubmit} className="bg-slate-900/40 border border-white/5 p-8 rounded-[2rem] shadow-2xl space-y-8 backdrop-blur-sm">
+                <div className="space-y-6">
                   <div>
-                    <label className="block text-xs font-bold text-[var(--color-muted)] uppercase tracking-wider mb-2">
-                      Describe the Issue
+                    <label className="block text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-3">
+                      Describe your situation or complaint
                     </label>
                     <textarea
                       required
-                      rows={5}
-                      className="w-full bg-surface-3 border border-surface-border rounded-xl px-4 py-3 text-sm text-white placeholder-surface-border focus:border-za-gold transition-all outline-none"
-                      placeholder="e.g. There is a major water leak at the corner of..."
+                      rows={6}
+                      className="w-full bg-slate-950 border border-white/10 rounded-2xl px-5 py-4 text-sm text-white placeholder-slate-700 focus:border-indigo-500 transition-all outline-none"
+                      placeholder="e.g. My water bill has been incorrect for 3 months despite several visits..."
                       value={description}
                       onChange={(e) => setDescription(e.target.value)}
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-xs font-bold text-[var(--color-muted)] uppercase tracking-wider mb-2">
-                        Location / Address
+                      <label className="block text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-3">
+                        Incident Location
                       </label>
                       <div className="relative">
-                        <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-surface-border" />
+                        <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-600" />
                         <input
                           type="text"
-                          className="w-full bg-surface-3 border border-surface-border rounded-xl px-10 py-3 text-sm text-white focus:border-za-gold outline-none"
-                          placeholder="Street address or suburb"
+                          className="w-full bg-slate-950 border border-white/10 rounded-2xl px-12 py-4 text-sm text-white placeholder-slate-700 focus:border-indigo-500 outline-none transition-all"
+                          placeholder="Street address / suburb"
                           value={location}
                           onChange={(e) => setLocation(e.target.value)}
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-[var(--color-muted)] uppercase tracking-wider mb-2">
-                        Municipality
+                      <label className="block text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-3">
+                        Municipality / Department
                       </label>
                       <div className="relative">
-                        <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-surface-border" />
+                        <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-600" />
                         <input
                           type="text"
-                          className="w-full bg-surface-3 border border-surface-border rounded-xl px-10 py-3 text-sm text-white focus:border-za-gold outline-none"
+                          className="w-full bg-slate-950 border border-white/10 rounded-2xl px-12 py-4 text-sm text-white placeholder-slate-700 focus:border-indigo-500 outline-none transition-all"
                           placeholder="e.g. City of Joburg"
                           value={municipality}
                           onChange={(e) => setMunicipality(e.target.value)}
@@ -130,13 +136,13 @@ export default function ReportPage() {
                 <div className="pt-4">
                   <button
                     disabled={loading}
-                    className="w-full btn-primary bg-za-gold hover:bg-za-gold/90 text-surface font-bold py-4 text-base glow-za"
+                    className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-black py-5 rounded-2xl text-lg shadow-xl shadow-indigo-600/20 transition-all active:scale-[0.98] disabled:opacity-50"
                   >
                     {loading ? (
-                      <Loader2 className="w-5 h-5 animate-spin mx-auto" />
+                      <Loader2 className="w-6 h-6 animate-spin mx-auto" />
                     ) : (
-                      <span className="flex items-center justify-center gap-2">
-                        Generate Official Report <Send className="w-4 h-4" />
+                      <span className="flex items-center justify-center gap-3">
+                        Draft Official Document <Send className="w-5 h-5" />
                       </span>
                     )}
                   </button>
@@ -148,66 +154,65 @@ export default function ReportPage() {
               key="result"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="space-y-6"
+              className="space-y-8"
             >
-              <div className="card !p-0 overflow-hidden border-t-4 border-t-za-gold">
-                <div className="bg-surface-2 p-6 border-b border-surface-border flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-za-gold/10 text-za-gold">
+              <div className="bg-slate-900 border border-white/5 p-1 rounded-[2rem] overflow-hidden shadow-3xl">
+                <div className="bg-indigo-600/5 p-6 border-b border-white/5 flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 rounded-2xl bg-indigo-600 text-white shadow-lg">
                       <FileText className="w-6 h-6" />
                     </div>
                     <div>
-                      <h2 className="text-lg font-bold text-white uppercase tracking-tight">Generated Municipal Report</h2>
-                      <p className="text-xs text-[var(--color-muted)]">Reference: AUTO-GEN-{generatedReport.report_id}</p>
+                      <h2 className="text-lg font-black uppercase tracking-tight">QueueLess AI Concierge Report</h2>
+                      <p className="text-[10px] text-slate-500 font-bold tracking-widest">ID: QL-{generatedReport.report_id}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="badge-uncertain bg-za-gold/10 text-za-gold border-za-gold/20">
-                      Urgency {generatedReport.urgency_score}/5
+                    <span className="bg-indigo-500/10 text-indigo-400 text-[10px] font-black px-3 py-1.5 rounded-full border border-indigo-500/20">
+                      LEGAL FORMAT VERIFIED
                     </span>
                   </div>
                 </div>
                 
-                <div className="p-8 bg-white text-zinc-900 font-mono text-sm whitespace-pre-wrap leading-relaxed min-h-[400px]">
+                <div className="p-10 bg-white text-zinc-900 font-serif text-base whitespace-pre-wrap leading-relaxed min-h-[500px] shadow-inner">
                   {generatedReport.generated_report}
                 </div>
 
-                <div className="p-6 bg-surface-2 border-t border-surface-border flex flex-wrap gap-4">
+                <div className="p-8 bg-slate-900/80 border-t border-white/5 flex flex-wrap gap-4">
                   <button 
                     onClick={() => window.print()}
-                    className="btn-primary bg-za-gold text-surface gap-2"
+                    className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-8 py-4 rounded-2xl flex items-center gap-3 shadow-lg transition-all"
                   >
-                    <Download className="w-4 h-4" /> Save as PDF / Print
+                    <Download className="w-5 h-5" /> Export as PDF
                   </button>
                   <button 
                     onClick={handleReset}
-                    className="btn-secondary gap-2"
+                    className="bg-white/5 hover:bg-white/10 text-white font-bold px-8 py-4 rounded-2xl flex items-center gap-3 transition-all"
                   >
-                    <Plus className="w-4 h-4" /> Create Another
+                    <Plus className="w-5 h-5" /> New Document
                   </button>
                 </div>
               </div>
 
-              <div className="card bg-za-green/10 border-za-green/20">
-                <div className="flex gap-4">
-                  <div className="shrink-0">
-                    <CheckCircle2 className="w-6 h-6 text-za-green" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-white mb-1">What to do next?</h3>
-                    <p className="text-xs text-[var(--color-muted)] leading-relaxed">
-                      This report has been saved to your dashboard. You can now download it and:
-                      <br/>1. Email it to your ward councillor.
-                      <br/>2. Attach it to a formal ticket on your municipality's app/website.
-                      <br/>3. Keep it as evidence for potential escalation to the Public Protector.
-                    </p>
-                  </div>
+              <div className="bg-emerald-500/5 border border-emerald-500/20 p-8 rounded-[2rem] flex gap-6">
+                <div className="shrink-0 w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center">
+                  <ShieldCheck className="w-6 h-6 text-emerald-400" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-2">Verified Professional Document.</h3>
+                  <p className="text-sm text-slate-400 leading-relaxed">
+                    This document has been saved to your QueueLess vault. You can now use this for formal escalations to the Public Protector, Ward Councillor, or as evidence in municipal disputes.
+                  </p>
                 </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </main>
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-[20%] left-[10%] w-[30%] h-[30%] bg-indigo-600/5 blur-[120px] rounded-full" />
+        <div className="absolute bottom-[20%] right-[10%] w-[30%] h-[30%] bg-purple-600/5 blur-[120px] rounded-full" />
+      </div>
     </div>
   );
 }

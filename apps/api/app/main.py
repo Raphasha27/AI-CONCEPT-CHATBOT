@@ -25,13 +25,13 @@ log = structlog.get_logger()
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan — startup + shutdown."""
-    log.info("Starting SizweOS API", environment=settings.ENVIRONMENT)
+    log.info("Starting QueueLess AI API", environment=settings.ENVIRONMENT)
     # Create all tables
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     log.info("Database tables initialized")
     yield
-    log.info("Shutting down SizweOS API")
+    log.info("Shutting down QueueLess AI API")
     await engine.dispose()
 
 
@@ -42,9 +42,9 @@ limiter = Limiter(
 )
 
 app = FastAPI(
-    title="SizweOS API",
-    description="The sovereign national OS for South Africa. National Infrastructure Intelligence Platform.",
-    version="3.0.0",
+    title="QueueLess AI API",
+    description="South Africa's premier civic concierge API. Powering queue avoidance and document intelligence.",
+    version="4.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
     lifespan=lifespan,
@@ -80,8 +80,8 @@ async def health_check():
     return JSONResponse(
         content={
             "status": "healthy",
-            "service": "SizweOS API",
-            "version": "3.0.0",
+            "service": "QueueLess AI API",
+            "version": "4.0.0",
             "environment": settings.ENVIRONMENT,
         }
     )
@@ -89,4 +89,4 @@ async def health_check():
 
 @app.get("/", tags=["Root"])
 async def root():
-    return {"message": "SizweOS API — National Infrastructure Intelligence Platform"}
+    return {"message": "QueueLess AI API — Premium Civic Concierge Platform"}

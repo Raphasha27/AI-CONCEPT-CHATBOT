@@ -13,7 +13,8 @@ import {
   BarChart3,
   ArrowUpRight,
   ShieldCheck,
-  Briefcase
+  Briefcase,
+  Info
 } from "lucide-react";
 import { taxMateAPI, spazaAPI } from "@/lib/api";
 import { toast } from "react-hot-toast";
@@ -72,8 +73,7 @@ export default function TaxMatePage() {
 
   const loadShops = async () => {
     try {
-      // Assuming spazaAPI exists or I'll just fallback to one
-      const res = await api.get("/spaza/");
+      const res = await spazaAPI.list();
       setShops(res.data);
       if (res.data.length > 0) setSelectedShopId(res.data[0].id);
     } catch (err) {
@@ -420,14 +420,4 @@ export default function TaxMatePage() {
   );
 }
 
-// Simple Icon fallback
-function Info(props: any) {
-  return (
-    <svg {...props} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-  )
 }
-
-// Simple api helper if not initialized
-const api = {
-  get: (url: string) => Promise.resolve({ data: [] })
-};

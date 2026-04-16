@@ -90,12 +90,12 @@ export default function CommandCenterPage() {
       <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
         <div className="max-w-[1600px] mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/20">
+            <div className="h-10 w-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-600/20">
               <ShieldAlert className="text-white" size={24} />
             </div>
             <div>
-              <h1 className="text-xl font-bold tracking-tight">National Intelligence Cockpit</h1>
-              <p className="text-xs text-slate-400 font-medium uppercase tracking-widest">SizweOS Sovereign Operations</p>
+              <h1 className="text-xl font-bold tracking-tight">National Operations Cockpit</h1>
+              <p className="text-xs text-slate-400 font-medium uppercase tracking-widest leading-none">QueueLess AI Sovereign Intelligence</p>
             </div>
           </div>
 

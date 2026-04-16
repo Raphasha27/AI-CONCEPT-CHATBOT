@@ -151,6 +151,13 @@ export const taxMateAPI = {
   }) => api.post("/tax/income-entry", data),
   brackets: (year: number = 2025) => api.get(`/tax/brackets?year=${year}`),
 };
+
+// ── SpazaAI ───────────────────────────────────────────────
+export const spazaAPI = {
+  list: () => api.get("/spaza/"),
+  get: (id: string) => api.get(`/spaza/${id}`),
+};
+
 // ── QueueLess AI (Gov Concierge) ──────────────────────────
 export const queuelessAPI = {
   offices: (type?: string) => api.get(`/queueless/offices${type ? `?office_type=${type}` : ""}`),
