@@ -44,7 +44,7 @@ Professional accounting and growth intelligence for the South African spaza and 
 ---
 
 ## 🚁 Live Demo & Preview
-Explore the national cockpit today: [queueless.co.za](https://queueless.co.za)
+Explore the national cockpit today: https://web-chi-pink-75.vercel.app
 
 ## 🏗️ Technical Stack
 QueueLess AI is built as a highly scalable monorepo ensuring professional-grade security and institutional performance.
